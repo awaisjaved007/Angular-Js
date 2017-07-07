@@ -1,2 +1,18 @@
-<h1>This is Success Message</h1>
-<app-server></app-server>
+<!--<input type="text" class="form-control" (input)="onUpdateServerName($event)">-->
+
+<!--<input type="text" name="user" class="form-control" [(ngModel)]="userName">
+<br>
+<p>User Name is : {{userName}}</p>
+
+<button class="btn btn-primary" [disabled]="isUserNameEmpty()" (click)="makeUesrEmpty()">User Name</button>
+--><br><br><br>
+<h4>Server Name:</h4>
+
+<input type="text"  class="form-control" [(ngModel)]="serverName">
+<br>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onServerCreate()">Add Server</button>
+<p *ngIf="flag">{{serverInfo}}</p>
+
+<br><br>
+<app-server *ngFor="let server of servers"></app-server>
+
