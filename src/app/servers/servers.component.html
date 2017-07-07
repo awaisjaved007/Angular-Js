@@ -6,7 +6,7 @@
 
 <button class="btn btn-primary" [disabled]="isUserNameEmpty()" (click)="makeUesrEmpty()">User Name</button>
 --><br><br><br>
-<h4>Server Name:</h4>
+<!--<h4>Server Name:</h4>
 
 <input type="text"  class="form-control" [(ngModel)]="serverName">
 <br>
@@ -14,5 +14,13 @@
 <p *ngIf="flag">{{serverInfo}}</p>
 
 <br><br>
-<app-server *ngFor="let server of servers"></app-server>
+<app-server *ngFor="let server of servers"></app-server>-->
+
+
+<button class="btn btn-primary" (click)="showDetails()">Display Details</button>
+<p *ngIf="showSecret">{{password}}</p>
+<div *ngFor="let logItem of log"
+     [ngStyle]="{backgroundColor: logItem>=5 ? 'blue':'' }"
+     [ngClass]="{'white-text': logItem>=5 ? 'blue':''}">{{logItem}}
+</div>
 

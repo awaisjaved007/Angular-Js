@@ -13,7 +13,10 @@ export class ServersComponent implements OnInit {
   serverName: string = 'Hello'
   userName:string=''
   servers = ['server1','server2']
+  password = ''
+  showSecret = false
   flag = false
+  log=[]
  // isUserNameEmpty : string = ''
   constructor() {
     setTimeout(() => {
@@ -45,5 +48,10 @@ export class ServersComponent implements OnInit {
   {
     return this.userName == '' ? true:false;
   }
-
+  showDetails()
+  {
+    this.log.push(this.log.length+1)
+    this.showSecret = !this.showSecret;
+    this.password = 'Secret password - tuna';
+  }
 }
